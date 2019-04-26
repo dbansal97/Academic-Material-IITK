@@ -1,0 +1,91 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{mlassn}
+
+\begin{document}
+
+\makeheader{3}                              					% assignment number
+           {October 31, 2017}      			           		% assignment date
+					 {120}																				% total marks
+
+\newcommand{\rf}{f_{\text{\textsf ReLU}}}
+
+\begin{mlproblem}[A Consistency Crisis for EM!]{7+8=15} Refer to lecture 16 material for this exercise. Let us be given data $X = \bs{\vx^1,\ldots,\vx^n}$ which redacts the identities of latent variables $\vz^1,\ldots,\vz^n$, with the task being to estimate the MLE model $\vtheta^{\text{MLE}} \in \Theta$ such that $\vtheta^{\text{MLE}} \in \underset{\vtheta \in \Theta}{\arg\max}\ \P{X\cond\vtheta}$. We have seen how, the EM algorithm proceeds by first finding an estimate $\vtheta^t$, then constructing a ``$Q$-function'' $Q_{\vtheta^t}: \Theta \rightarrow \bR$ as
+\[
+Q_{\vtheta^t}(\vtheta) = \sum_{i=1}^n Q_{i,\vtheta^t}(\vtheta),
+\]
+where $Q_{i,\vtheta^t}(\vtheta) = \bE_{\vz \sim \P{\vz\cond\vx^i,\vtheta^t}}\log \P{\vx^i,\vz\cond\theta}$, and then updating $\vtheta^{t+1} = \underset{\vtheta \in \Theta}{\arg\max}\ Q_{\vtheta^t}(\vtheta)$. Given this, show the following \emph{self-consistency} properties of the $Q$-function
+\begin{enumerate}
+	\item $\vtheta^{\text{MLE}} \in \underset{\vtheta \in \Theta}{\arg\max}\ Q_{\vtheta^{\text{MLE}}}(\vtheta)$
+	\item If $\vtheta^1, \vtheta^2 \in \underset{\vtheta \in \Theta}{\arg\max}\ \P{X\cond\vtheta}$ are two distinct but optimal MLE solutions then $\vtheta^1 \in \underset{\vtheta \in \Theta}{\arg\max}\ Q_{\vtheta^2}(\vtheta)$ and  $\vtheta^2 \in \underset{\vtheta \in \Theta}{\arg\max}\ Q_{\vtheta^1}(\vtheta)$
+\end{enumerate}
+You may reuse results proved in class without proving them again but you must clearly point to the lecture number, slide number in which that result was proved and also state the result clearly before using it in your proofs.
+\end{mlproblem}
+
+\begin{mlproblem}[ReLU guys! I'm going home!]{5+10+5+15 = 35} In this exercise, we will show that a ReLU network always learns a piecewise linear function. An $n$-partition of a set $\cX$ is a collection of $n$ subsets $\bc{\cX_1,\ldots,\cX_n}$ such that each $\cX_i \subseteq \cX$ and
+\begin{itemize}
+	\item $\cX_i \cap \cX_j = \phi$ if $i \neq j$
+	\item $\bigcup_{i=1}^n \cX_i = \cX$
+\end{itemize}
+ A piecewise linear function $f: \bR^d \rightarrow \bR$ with $n > 0$ ``pieces'' is indexed by an $n$-partition $\bc{\Omega_1,\ldots,\Omega_n}$ of $\bR^d$ and $n$ linear models $\vw^1,\ldots,\vw^n$ such that for any $\vx \in \bR^d$, we have
+\[
+f(\vx) = \sum_{i=1}^n \ind{\vx \in \Omega_i}\cdot\ip{\vw^i}{\vx},
+\]
+where $\ind{E} = 1$ if $E$ is true and $0$ otherwise. Now, let $\rf(v) = \max(v,0)$ for any $v \in \bR$ denote the ReLU activation function. Then show that
+\begin{enumerate}
+	\item For any piecewise linear function $f$, and any scalar $c \in \bR$, the function $g(\vx) = c\cdot f(\vx)$ is also piecewise linear.
+	\item The sum of two piecewise linear functions is piecewise linear. Be careful that the two functions could correspond to different (number of) partitions of $\bR^d$.
+	\item For a piecewise linear function $f$, the function $g(\vx) = \rf(f(\vx))$ is also piecewise linear.
+	\item Any neural network with a ReLU activation function computes a piecewise linear function.
+	\item \textbf{Bonus}: If the network $d$ input nodes, only one hidden layer with $D$ nodes and only one output node, and all nodes except input layer nodes apply the ReLU activation function, how many ``pieces'' does the function computed by the network correspond to?
+\end{enumerate}
+\end{mlproblem}
+
+\begin{mlproblem}[Kernel Perceptron]{25}
+Develop a variant of the perceptron algorithm that can work in an RKHS corresponding to a Mercer kernel $K$. Your algorithm is forbidden from explicitly computing the feature map corresponding to $K$ even once. Your perceptron should at every time step (see lecture 10), receive a data point $(x^t,y^t) \in \cX \times \bc{-1,+1}$ and perform updates. Just state your final algorithm cleanly giving all details in pseudo-code format - no derivations needed. You are encouraged to use the \texttt{mlalgorithm} command to format your pseudo code neatly. See \url{https://piazza.com/class/j5toxxryhdx56k?cid=354} for help.
+\end{mlproblem}
+
+\begin{mlproblem}[A Kernel is All You Need]{10+7+8+10=35}
+We will denote a $2$-dimensional vector as $\vz = (x,y) \in \bR^2$ where $x,y\in\bR$ are the coordinates of the point. Consider the quadratic kernel over these points
+\[
+K(\vz^1,\vz^2) = (\ip{\vz^1}{\vz^2} + 1)^2.
+\]
+Let $\cH_K$ denote the RKHS of the kernel $K$ and let $\varphi_K$ be the feature map for $K$. A quadratic function over $\bR^2$ is parameterized as $(A,\vb,c) \in \bR^{2\times 2}\times\bR^2\times \bR$ as 
+\[
+f_{(A,\vb,c)}(\vz) = \ip{\vz}{A\vz} + \ip{\vb}{\vz} + c
+\]
+\begin{enumerate}
+	\item Show that the kernel $K$ is Mercer by giving an explicit construction for $\varphi: \bR^2 \rightarrow \cH_K$. You will need to set $\cH_K \equiv \bR^D$ for an appropriate value of $D$. What $D$ did you choose?
+	\item For every quadratic function $f_{(A,\vb,c)}$ over $\bR^2$, construct a $\vw \in \cH_K$ such that for all $\vz \in \bR^2$
+	\[
+	f_{(A,\vb,c)}(\vz) = \ip{\vw}{\varphi_K(\vz)}
+	\]
+	\item For every $\vw \in \cH_K$, construct a triplet $(A,\vb,c) \in \bR^{2\times 2}\times\bR^2\times \bR$ such that for all $\vz \in \bR^2$
+	\[
+		f_{(A,\vb,c)}(\vz) = \ip{\vw}{\varphi_K(\vz)}
+	\]
+	\item Given a regression dataset $(Z,\vy) \in \bR^{2 \times n} \times \bR^n$, show that as the regularization parameter $\lambda \rightarrow 0^+$, the output of kernel ridge regression over $(Z,\vy)$ using the kernel $K$, is a quadratic function $\hat f$ over $\bR^2$ that offers a least squares error that is arbitrarily close to the smallest least squares error achievable over the dataset by any quadratic function over $\bR^2$ i.e.
+	\[
+	\sum_{i=1}^n(y^i - \hat f(\vz^i))^2 \leq \min_{(A,\vb,c) \in \bR^{2\times 2}\times\bR^2\times \bR}\ \sum_{i=1}^n(y^i - f_{(A,\vb,c)}(\vz^i))^2 + \epsilon
+	\]
+\end{enumerate}
+where $\epsilon \rightarrow 0$ as $\lambda \rightarrow 0^+$.
+\end{mlproblem}
+
+\begin{mlproblem}[Why PCA does Mean-centering]{3+7=10}
+Recall that we advocated a mean-centering preprocessing step to ensure optimal performance for PCA and PPCA routines. Lets see why is it that the mean is chosen to center. Suppose the low-dimensional latent factors are generated as
+\[
+\P{\vz} = \cN(\vzero,I_k) \in \bR^k,
+\]
+whereupon an affine transformation is applied to them and noise is added to produce the observed data point, i.e. for $W \in \bR^{d\times k}, \vmu \in \bR^d, \sigma \geq 0$
+\[
+\P{\vx\cond\vz} = \cN(\vx\cond W\vz+\mu, \sigma^2\cdot I_d) \in \bR^d.
+\]
+Note that the transformation is affine $W\vz^i+\mu$ instead of linear in this example. Now using conjugacy properties of the Gaussian (see [\textbf{BIS}] Chapter 12), we can show that
+\[
+\P{\vx} = \int_{\vz}\P{\vx\cond\vz}\P{\vz}\ d\vz = \cN(\vx\cond\vmu,C),
+\]
+where $C = WW^\top + \sigma^2\cdot I_d$. For a dataset $X = \bs{\vx^1,\ldots,\vx^n}$, write down the complete expression for the data log-likelihood $\P{X\cond\vmu,W,\sigma}$. Do not ignore constants in your expression. Then derive an expression for $\vmu^{\text{MLE}} = \underset{\vmu\in\bR^d}{\arg\max}\ \P{X\cond\vmu,W,\sigma}$. Show all steps. 
+\end{mlproblem}
+
+\end{document}
