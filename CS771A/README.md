@@ -1,4 +1,4 @@
-# Machine Learning Techniques
+# Introduction to Machine Learning
 
 ## Acknowledgments
 

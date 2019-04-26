@@ -3,4 +3,5 @@ This repository contains the various course related learning material.
 
 # Courses
 * ESO207A/CS210A - Data Structures and Algorithms
-* CS771 - Machine Learning Techniques
+* CS771A - Introduction to Machine Learning
+* CS425A - Computer Networks
