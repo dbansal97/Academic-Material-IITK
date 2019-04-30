@@ -1,0 +1,5 @@
+In this question the main function is taking a input and concatenate the time and input and then print the MD5SUM of the resultant string.
+
+Now the question said that OTP was generated and saved initially, so I guessed that the hash (MD5SUM) time of pass.db and my username dbansal should be the required hash.
+
+I used the online md5sum generator to get it.

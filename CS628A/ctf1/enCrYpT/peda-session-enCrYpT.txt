@@ -1,0 +1,10 @@
+break main
+break *0x56555836
+break *0x56555881
+break *0x56555886
+break *0x56555893
+break *0x565558b1
+break *0x565558ad
+break *0x56555893
+break *0x565558a1
+

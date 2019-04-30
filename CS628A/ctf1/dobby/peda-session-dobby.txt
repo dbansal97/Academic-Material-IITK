@@ -1,0 +1,18 @@
+break *0x08048470
+break keep_secret
+break main
+break get_flag
+break *0x0804874e
+break *0x08048788
+break *0x804876e
+break *0x080487ab
+break *0x080487bb
+break *0x08048790
+break *0x080486b0
+break *0x08048688
+break *0x0804869c
+break *0x080486ec
+break *0x080486ec
+break *0x080486ec
+break *0x080486ec
+

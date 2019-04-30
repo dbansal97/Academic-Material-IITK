@@ -1,0 +1,4 @@
+Since plaintext and keys both are ASCII values and of size 0-255 and the line no 25 ie. "strr += "%02x" % i" is converting to hexadecimal so I took the flag.enc two characters each and got ciphertext.
+Now there are 8 keys (k1, k2,..., k8)(times 5) and lets say ciphertext (z1, z2,..., z40) and plaintext (y1,y2,...,y40) we have k1^y1 = z1.
+Now i know flag is of format cs628a{<passphrase>} so i know y1, y2,...,y7 and y40 and so i know all keys and hence the passphrase and the flag.
+All this is done in answer.py script.

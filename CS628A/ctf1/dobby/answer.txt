@@ -1,0 +1,9 @@
+Command - python -c 'print "123478\n" + (chr(0x7b)+chr(0x86)+chr(0x04)+chr(0x08))*70 + "\ncrucio"' | ./dobby 
+
+In this main function is calling keep_secret function which can be exploited.
+
+In the keep_secret function my input is getting compared to a predefined integer and then jump is taken accordingly. I need to take that jump for further exploitation.
+
+Now I needed to call the get_flag function and hence I give its address in the second input which overwrited the return address and now I'm in the get_flag function. I used Buffer Overflow stack exploit.
+
+In get_flag function my input is getting compared to the string "crucio" so to decide whether to make jump to end of function or go to make a syscall which is showing the flag.txt file.

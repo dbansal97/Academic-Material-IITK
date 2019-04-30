@@ -1,0 +1,3 @@
+First of all I corrected the header of png file.
+
+Then i used the ImageMagick tool of ubuntu to see the hidden text. I used Edge detection and eboss function of this tool.

@@ -1,0 +1,97 @@
+# Put your answers below the corresponding question number.
+# Don't invent your own numbering system, stick to what we have provided.
+
+
+-----------------------------------------------------------------
+[1]
+Following devices are connected to the local network.
+(MAC) (IP) (Manufacturing Company)
+(00:26:08:e5:66:07) (10.0.2.1) (Apple)
+(04:0c:ce:d8:0f:fa) (10.0.2.2) (Apple)
+(8c:a9:82:50:f0:a6) (10.0.2.3) (Intel)
+
+-----------------------------------------------------------------
+[2]
+In the address resolution under "Statistic" in the wireshark tool, I found that there are traffics going to lb.wordpress.com, ctools.umich.edu, yf1.yahoo.com, guardian.co.uk, facebook.com and many more sites.
+Also there are two IP addresses which are making HTTP requests ie. 10.0.2.2 and 10.0.2.3.
+Also 10.0.2.1 appears to be a local name server.
+Thus this network appears to be a small local personal network comprising of 3 devices.
+
+-----------------------------------------------------------------
+[3.a]
+It connects to hostname: dl.xs4all.nl
+This corresponds to IP: 194.109.21.66
+Client connecting to it has IP: 10.0.2.2
+
+-----------------------------------------------------------------
+[3.b]
+This connection is Active FTP.
+In Active FTP the user specifies the port on their machine that is awaiting the connection and the server connects to it while in Passive FTP the user specifies PASV and the server send the user a port that they should look for data from.
+In our case the client uses a PORT command and not a PASV command.  
+It issued PORT command PORT 10,0,2,2,199,51 to the server.
+
+-----------------------------------------------------------------
+[3.c]
+One major vulnerability of the FTP protocol is that the FTP login credential is in plain text.
+We can see the information of the user like :
+User: laticia.langhans
+Password: goblue3859
+This is vulnerable to attacker as the information transferred with FTP is not encrypted, so usernames and passwords sent can be seen in plaintext as the case here.
+
+-----------------------------------------------------------------
+[3.d]
+Network protocols that can be used in place of FTP to provide secure file transfer are:
+SFTP (SSH File Transfer Protocol)
+FTPS (FTP over SSL/TLS) 
+
+
+-----------------------------------------------------------------
+[4.a]
+The client 10.0.2.2, besides Facebook connected to following as HTTPS connections:
+Domain name: weblogin.umich.edu
+Its IP: 141.211.13.253
+
+-----------------------------------------------------------------
+[4.b]
+No, the HTTPS server cannot protect against the leak of information because the first message sent between the client and the server is not encrypted as the cipher suite has not yet been decided. Also we cannot hide destination IP address in the TCP connection.
+
+-----------------------------------------------------------------
+[4.c]
+Although there are 36 Cipher Suite, first three are:
+Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
+Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
+Cipher Suite: TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0088)
+Name of crypto algorithms in each is after the "WITH" in cipher suite.
+
+-----------------------------------------------------------------
+[4.d]
+Yes, there is one cipher suite that is worrisome from a security or privacy perspective, it is:
+Cipher Suite: TLS_RSA_WITH_RC4_128_MD5 (0x0004) 
+The MD5 algorithm has been shown to be weak and susceptible to collisions and hash extensions.
+RC4 is vulnerable to various attacks such as bit-flipping, and there are key and keystream correlations that make it easy for an attacker to find the key.
+
+-----------------------------------------------------------------
+[4.e]
+Server choose the following Cipher Suite for the connection:
+Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039)
+
+-----------------------------------------------------------------
+[5.a]
+The browser is authenticated to Facebook using cookies which are visible (plaintext) when the user sends other requests using HTTP. 
+
+-----------------------------------------------------------------
+[5.b]
+Attacker could capture the packet and can steal the cookie.
+Now the attacker can use it as its own and can use cookie injection to impersonate the victim on facebook.
+
+-----------------------------------------------------------------
+[5.c]
+Users by themselves cannot protect against this type of attack but Facebook can by using HTTPS for all the requets instead of HTTP.
+
+-----------------------------------------------------------------
+[5.d]
+The user goes to the main page.
+Then user searched for the name "zakir durum".
+Then the user goes to Zakir’s profile page.
+Then the user sent him a message with an attachment.
+Then user checked for the notifications.

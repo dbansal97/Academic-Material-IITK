@@ -1,0 +1,7 @@
+I observed that the rand() function is creating a canary from the time. I used the exact same rules to create a python file which generates the canary at any given time.
+
+Then this canary is used for comparison in main again. Now since I know the canary I overwite the the stack with this canary and the address of function which I wanted to execute.
+
+I observed there is a comaprasion in get_flag of eax with 0x3 and there value is written after going in sequence one_two, buckle, my_shoe. Hence I needed to make call to these functoions as well.
+
+guess_canary.py is used to generate the random canary that the program checks for a particular time.

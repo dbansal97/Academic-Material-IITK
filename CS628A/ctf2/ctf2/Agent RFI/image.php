@@ -1,0 +1,8 @@
+‰PNG
+
+
+
+
+<?php
+	echo "Hello";
+?>

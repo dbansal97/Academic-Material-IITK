@@ -1,0 +1,3 @@
+In this question I first tried standard passwords like ' or '1'='1 to login but by using them I was logged into someone else's account.
+So by after many hit and trial I used '=' and got logged into my account.
+And then found the flag in my bio.

@@ -1,0 +1,9 @@
+Input Format - 'y'+ chr(0)*2 +(chr(offset)+chr(0xda)+chr(0xff)*2)*32 + '\n' + (chr(0x8a)+chr(0x87)+chr(0x04)+chr(0x08))*25
+
+In this inside main there is a gets() function call which can be exploited. Now main will call _Z5greetP7Greeter function which is dereferancing the value of eax register two times and then calling eax.
+
+So I want the address of execute_command() function in the eax so that it got called and I get the flag.
+
+To do so I used gets() of main to write the address of location of stack which will be holding the address of execute_command().
+
+Also I've created the file named nop_slides.py which is used to run the program on various offsets to get flag.

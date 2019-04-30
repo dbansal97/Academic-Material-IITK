@@ -1,0 +1,12 @@
+Command - python -c 'print "yes"+ chr(0)*1 + (chr(0xc0)+chr(0xdb)+chr(0xff)*2)*10 + "\n"+ "abcd.txt" +"a" +  chr(0) + "a"*2 + (chr(0x76)+chr(0x88)+chr(0x04)+chr(0x08))*10' > input_to_vtr 
+
+
+This is similar to VirtualTourist question except the additional argument of name of file.
+
+In this inside main there is a gets() function call which can be exploited. Now main will call _Z5greetP7Greeter function which is dereferancing the value of eax register two times and then calling eax.
+
+So I want the address of getFlag() function in the eax so that it got called and I get the flag stored in a file which is being opened by fopen() which takes filename as a agrument which I provide.
+
+To do so I used gets() of main to write the address of location of stack which will be holding the address of getFlag().
+
+Also I've created the file named nopSlide.py which is used to run the program on various offsets to get flag.

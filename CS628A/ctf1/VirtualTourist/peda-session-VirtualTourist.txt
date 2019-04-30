@@ -1,0 +1,17 @@
+break *0x080486c6
+break *0x080486d7
+break *0x080486e3
+break *0x08048711
+break *0x0000000008048716
+break *0x0804873e
+break *0x0804875a
+break *0x8048786
+break *0x8048786
+break *0x8048786
+break *0x8048786
+break *0x8048786
+break *0x0804876a
+break *0x0804876a
+break *0x0804878b
+break *0x08048797
+

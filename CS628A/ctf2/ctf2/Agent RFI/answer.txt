@@ -1,0 +1,5 @@
+In this to plant the Agent RFI, I tried uploading a php file but server rejected it. 
+So i added header of png file as the starting bytes of my .php file and then uploaded it, now it said my agent has been planted.
+Now I looked at the information in the students table corresponding to agent rfi.I found the flag in the "bio" attribute corresponding to rfi usnig SQLI.
+
+SQL Query - ' oorr 1 ununionion (selselectect null,(SEselectLECT group_concat(bio) FROM student whewherere uname='rfi'),null,null,null,null,null,null,null,null,null,null,null,null) -- -

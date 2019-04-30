@@ -1,0 +1,8 @@
+In this I tried various parameters but the arguments are getting well sanitized so having a terminating character or something like that didn't work. 
+Now the arguments are concatenated with salt and so the both sides looked like
+	md5(salt) + $_GET["arg1"] = md5(salt) + $_GET["arg2"]
+Now if arg1 is of type Array and is convereted to string it will give Array as value because of string concatenation, so I used this and made arg1 as array in url and arg2 as string "Array" so that equality check gets passed and got the flag.
+
+Url - https://cs628a.cse.iitk.ac.in:9048/jdPoIzOpz7/?p=apps&f=1&arg1[]=&arg2=Array
+We can also make both of them as type arrays as well like
+Url - https://cs628a.cse.iitk.ac.in:9048/jdPoIzOpz7/?p=apps&f=1&arg1[]=&arg2[]=d

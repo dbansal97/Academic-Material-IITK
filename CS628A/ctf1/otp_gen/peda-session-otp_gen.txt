@@ -1,0 +1,7 @@
+break *0x000055555555497b
+break printOTP
+break *0x00005555555549c7
+break *0x00005555555549c7
+break *0x00005555555549e9
+break main
+

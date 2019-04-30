@@ -1,0 +1,4 @@
+\211   P   N   G  \r  \n \032 \n
+<?php
+	echo $reward
+?>

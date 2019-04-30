@@ -1,0 +1,7 @@
+In this main function is calling make_passwd function which can be exploited.
+
+In make_passwd function it is looking for FLAG variable in environment and I set it to some value so that code can proceed further form jump statement. It then generated a password which is compared in main function.
+
+Now System call is made in made for 'ls -l'.
+
+Now I wrote my own script for "ls" in which i gave command "cat flag.txt" which will show me the flag and added my directory path before the environment PATH variable so that when ls is being run it runs my script for ls which displays the flag.

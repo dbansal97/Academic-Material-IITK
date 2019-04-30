@@ -1,0 +1,3 @@
+In this question I first changed the admin to 1 because of hint on the website.
+Now I just changed the header correspondin to the each instruction message and got the falg finally.
+First I changed the user agent to CS628, then referrer to android.cse.iitk.ac.in, then added DNT flag and set its value to 1 and finally added X-uidh:1 to handle the permacookie.

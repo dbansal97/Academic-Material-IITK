@@ -1,0 +1,9 @@
+In this there is a test statement which checks for a non zero value at a certain memory location and based on that making a jump to getFlag function which in turn does a syscall to show the flag.
+
+I used Format string vulnerability of printf to write at that specific memory location. 
+
+But now printf was executed after encrption so I gave input whose encryption was the required string.
+
+I observed that the function encrypt is used to encrypt the input I gave and encryption is done by adding or subtracting a number for each position of input.
+
+In this also I used the nopSlide.py script to give input for various offsets.
